@@ -1,4 +1,5 @@
 import React from 'react'
+import img from "./components/img_landingpage.png"
 
 function LandingPage() {
   return (
@@ -67,7 +68,7 @@ function LandingPage() {
               </div>
             </div>
             <div class="md:w-1/2 flex justify-center md:justify-end p-8 md:p-16">
-              <img alt="Silhouette of two people shaking hands with orange highlights on a dark gray gradient background" class="max-w-full h-auto" height="200" src="https://storage.googleapis.com/a1aa/image/bdf509bb-d75e-4dfb-a456-d7696fce6eb3.jpg" width="300" />
+              <img alt="Silhouette of two people shaking hands with orange highlights on a dark gray gradient background" class="max-w-full h-auto" height="200" src={img} width="300" />
             </div>
           </section>
         </main>
