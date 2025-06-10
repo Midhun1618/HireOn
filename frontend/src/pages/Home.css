@@ -28,10 +28,14 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: #4b5563;
+  text-decoration: none;
+}
+.home-link{
+    transition:  transform 0.2s ease;
 }
 
 .home-link:hover {
-  color: #111827;
+    transform: translateY(-3px);
 }
 
 .home-buttons {
@@ -40,30 +44,32 @@
 }
 
 .btn-signin {
-  color: #f97316;
-  border: 1px solid #fdba74; 
+  color: #fb923c;
   padding: 0.4rem 1rem;
   border-radius: 0.375rem;
   font-weight: 600;
-  background: none;
-  transition: background 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-signin:hover {
-  background-color: #fff7ed; 
+    color: #e7651f;
+  transform: translateY(-5px);
 }
 
 .btn-login {
-  background-color: #f97316;
+  background-color: #fb923c;
   color: white;
   padding: 0.5rem 1.25rem;
   border-radius: 0.375rem;
   font-weight: 600;
-  transition: background 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-login:hover {
-  background-color: #ea580c; /* orange-600 */
+  background-color: #e7651f;
+  transform: translateY(-5px);
 }
 
 .home-main {
@@ -126,9 +132,14 @@
   padding: 0.5rem 1.25rem;
   border-radius: 0.375rem;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-post-task:hover {
+    background-color: #e7651f;
+    transform: translateY(-5px);
+    box-shadow: 0 7px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-find-work {
@@ -137,10 +148,14 @@
   padding: 0.5rem 1.25rem;
   border-radius: 0.375rem;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-find-work:hover {
-  background-color: #f3f4f6;
+    color: #e7651f;
+  transform: translateY(-5px);
+  box-shadow: 0 7px 4px rgba(0, 0, 0, 0.1);
 }
 
 .home-image-container {
