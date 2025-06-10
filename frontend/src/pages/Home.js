@@ -11,13 +11,13 @@ function Home() {
           <span className="orange-text">On</span>
         </div>
         <nav className="home-nav">
-          <a className="home-link" href="/">Home</a>
-          <a className="home-link" href="/">Features</a>
-          <a className="home-link" href="/">Contact</a>
+          <div className="home-link" href="#home-hero">Home</div>
+          <div className="home-link" href="#home-hero">Features</div>
+          <div className="home-link" href="#home-hero">Contact</div>
         </nav>
         <div className="home-buttons">
-          <button className="btn-signin">Sign In</button>
-          <button className="btn-login">Login</button>
+          <div className="btn-signin">Sign In</div>
+          <div className="btn-login">Login</div>
         </div>
       </header>
 
@@ -32,11 +32,11 @@ function Home() {
               <span className="highlight-text">Earnings!</span>
             </h1>
             <p className="home-description">
-              Post tasks or earn money by helping peers with your talent
+              Post tasks or earn money by collaborating talents with your peer.
             </p>
             <div className="home-action-buttons">
-              <button className="btn-post-task">Post a Task</button>
-              <button className="btn-find-work">Find Work</button>
+              <div className="btn-post-task">Post a Task</div>
+              <div className="btn-find-work">Find Work</div>
             </div>
           </div>
           <div className="home-image-container">
