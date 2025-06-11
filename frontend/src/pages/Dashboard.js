@@ -10,6 +10,7 @@ const Dashboard = () => {
           <span className="gray-texst">ire</span>
           <span className="orange-text">On</span>
         </div>
+        <div className="masked-header">
         <input
           type="text"
           placeholder="Search for Jobs"
@@ -19,6 +20,7 @@ const Dashboard = () => {
           <div className="icon-circle" />
           <div className="icon-circle" />
           <div className="icon-circle" />
+        </div>
         </div>
         <div className="icon-avatar" />
       </header>
@@ -30,9 +32,8 @@ const Dashboard = () => {
           <div className="sidebar-user">
             <p className="username">UserName</p>
             <p className="email">username@gmail.com</p>
-            <button className="btn-blue">Freelancer</button>
-            <br />
-            <button className="btn-orange">Web Designer</button>
+            <div className="btn-blue">Freelancer</div>
+            <div className="btn-orange">Web Designer</div>
           </div>
 
           <div className="skills-box">
