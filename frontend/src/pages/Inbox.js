@@ -25,7 +25,6 @@ const Inbox = () => {
                 <div className="icon-avatar" />
             </header>
             <div className="inbox-container">
-                {/* Sidebar */}
                 <div className="inbox-sidebar">
                     <h2 className="inbox-title">Inbox</h2>
                     <div className="inbox-filters">
@@ -42,8 +41,6 @@ const Inbox = () => {
                         <div className="status-dot"></div>
                     </div>
                 </div>
-
-                {/* Chat Window */}
                 <div className="chat-window">
                     <div className="chat-header">
                         <div className="avatar large"></div>
@@ -65,8 +62,6 @@ const Inbox = () => {
                         <button className="chat-btn"></button>
                     </div>
                 </div>
-
-                {/* Extra Column (Empty for now) */}
                 <div className="inbox-detail-pane"></div>
             </div>
         </div>
