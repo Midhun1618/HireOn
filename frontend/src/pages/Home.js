@@ -1,7 +1,56 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import img from './components/img_landingpage.png'; 
+import img from './components/img_landingpage.png';
+import { jwtDecode } from 'jwt-decode';
+
 function Home() {
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
+  const [showPopover, setShowPopover] = useState(false);
+  const popoverRef = useRef(null);
+
+  let firstLetter = null;
+  if (token) {
+    const decoded = jwtDecode(token);
+    firstLetter = decoded.name ? decoded.name.charAt(0).toUpperCase() : null;
+  }
+
+  const handleSignUp = () => {
+    navigate('/signup');
+  };
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
+  const handleAvatarClick = () => {
+    setShowPopover((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setShowPopover(false);
+    navigate('/');
+  };
+
+  // Close popover if clicked outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
+        setShowPopover(false);
+      }
+    }
+    if (showPopover) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showPopover]);
+
   return (
     <div>
       <header className="home-header">
@@ -15,9 +64,26 @@ function Home() {
           <div className="home-link" href="#home-hero">Features</div>
           <div className="home-link" href="#home-hero">Contact</div>
         </nav>
-        <div className="home-buttons">
-          <div className="btn-signin">Sign In</div>
-          <div className="btn-login">Login</div>
+        <div className="home-buttons" style={{ position: 'relative' }}>
+          {!token ? (
+            <>
+              <div className="btn-signin" onClick={handleSignUp} style={{ cursor: 'pointer' }}>Sign In</div>
+              <div className="btn-login" onClick={handleLogin} style={{ cursor: 'pointer' }}>Login</div>
+            </>
+          ) : (
+            <>
+              <div className="avatar" onClick={handleAvatarClick} style={{ cursor: 'pointer' }}>
+                {firstLetter}
+              </div>
+              {showPopover && (
+                <div className="popover" ref={popoverRef}>
+                  <div className="popover-item" onClick={handleLogout}>
+                    Logout
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </header>
 
