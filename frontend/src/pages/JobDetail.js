@@ -1,5 +1,6 @@
 import React from "react";
 import "./JobDetail.css";
+import img_banner from './components/detailsBanner.png'
 
 const JobDetail = () => {
   return (
@@ -26,8 +27,8 @@ const JobDetail = () => {
         <div className="icon-avatar" />
       </header>
       <div className="jobdetails-container">
-        <div className="jobdetails-left">
-          <div className="jobdetails-banner" role="img" aria-label="Green banner"></div>
+        <div className="jobdetails">
+          <img className="jobdetails-banner" src={img_banner} aria-label="Green banner"/>
 
           <h2 className="job-title">Web Designing</h2>
           <p className="short-description">This is a short description about the task</p>
@@ -52,7 +53,7 @@ const JobDetail = () => {
             <button className="attachment-btn">3 Videos (150 mb)</button>
           </div>
         </div>
-        <div className="jobdetails-right">
+        <div className="taskdetails">
           <div>
             <h3 className="task-detail-title">Task Detail</h3>
             <div className="job-info-row">
