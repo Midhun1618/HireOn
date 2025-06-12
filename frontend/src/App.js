@@ -1,4 +1,6 @@
-import Home from './pages/Home'
+
+import Home from './pages/Inbox'
+
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
