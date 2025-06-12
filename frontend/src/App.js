@@ -1,4 +1,4 @@
-import Home from './pages/JobDetail'
+import Home from './pages/Inbox'
 import './App.css';
 
 function App() {

@@ -1,0 +1,258 @@
+/* Container */
+.inbox-container {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  background-color: #d3d3d3;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.inbox-sidebar {
+  background-color: #d3d3d3;
+  border-radius: 16px;
+  padding: 16px;
+  width: 25%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.inbox-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.inbox-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 16px;
+  background-color: #f37021;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter:not(.active) {
+  background-color: #ffa366;
+}
+
+.message-preview {
+  background-color: white;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #6ec6ca;
+}
+
+.avatar.large {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar.small {
+  width: 32px;
+  height: 32px;
+}
+
+.message-info {
+  flex: 1;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.message-snippet {
+  font-size: 12px;
+  color: gray;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #f37021;
+  border-radius: 50%;
+}
+
+/* Chat Window */
+.chat-window {
+  background-color: white;
+  border-radius: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.chat-username {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.online-badge {
+  display: inline-block;
+  background-color: #f37021;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 2px 8px;
+  margin-left: 8px;
+}
+
+.chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.msg-left {
+  align-self: flex-start;
+  background-color: #eee;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+  font-size: 14px;
+}
+
+.msg-right {
+  align-self: flex-end;
+  background-color: #f37021;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+  font-size: 14px;
+}
+
+.chat-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background-color: #ddd;
+}
+
+.chat-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #f37021;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Extra panel */
+.inbox-detail-pane {
+  width: 25%;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.search-bar {
+  flex: 3;
+  max-width: 60vw;
+  margin: 0 1rem;
+  padding: 0.8rem 0.8rem;
+  padding-right: 15rem;
+  border-radius: 9999px;
+  background-color: #E5E5E5;
+  border: none;
+  color: #9CA3AF;
+}
+
+.header-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.icon-circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #FF6F3C;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.icon-circle:hover{
+    transform: translateY(-3px);
+}
+
+.icon-avatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: #FF6F3C;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.icon-avatar:hover{
+    transform: scale(1.1);
+}
+
+.home-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  user-select: none;
+}
+
+.orange-text {
+  color: #f97316; 
+}
+
+.gray-text {
+  color: #4b5563; 
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  padding: 0rem 0.5rem;
+}
+
+.masked-header{
+  background-color: #D9D9D9;
+  display: flex;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: 0.45rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
