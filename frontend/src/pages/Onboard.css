@@ -1,0 +1,52 @@
+.onboard-container {
+  min-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: sans-serif;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+.section {
+  margin-top: 2rem;
+  padding-top: 5rem;
+  min-height: 35rem;
+  align-items: center;
+}
+
+.btn {
+  margin: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #333;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+}
+
+.btn.selected {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+#continue-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#continue-btn:hover {
+  background-color: #555;
+}
+
+
