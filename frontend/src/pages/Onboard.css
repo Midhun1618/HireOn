@@ -8,31 +8,70 @@
 }
 
 .section {
-  margin-top: 2rem;
+    align-content: center;
+  margin-top: 3rem;
   padding-top: 5rem;
-  min-height: 35rem;
+  min-height: 25rem;
   align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #a3a3a3;
+  border-radius: 1.5rem;
+}
+.section-main {
+  margin-top: 3rem;
+  padding-top: 5rem;
+  min-height: 25rem;
+  align-items: center;
+  background-color: #a3a3a3;
+  border-radius: 1.5rem;
 }
 
 .btn {
+    text-align: center;
   margin: 0.5rem;
   padding: 0.75rem 1.25rem;
-  border: 2px solid #333;
+  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
   background: white;
   cursor: pointer;
+  min-width: 3rem;
+  min-height: 6rem;
   transition: 0.3s;
   border-radius: 8px;
 }
 
 .btn:hover {
-  background: #f0f0f0;
+  background: #ff9f4a;
 }
 
 .btn.selected {
-  background-color: #4caf50;
-  color: white;
-  border-color: #4caf50;
+  background-color: rgb(255, 131, 16);
+  color: rgb(255, 255, 255);
 }
+.btn-card {
+  margin: 1.5rem;
+  min-height: 8rem;
+  min-width: 5.5rem;
+  padding: 1.75rem 1.25rem;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-card:hover {
+  background: #ff9f4a;
+  transform: translateY(-5px);
+  transform: scale(1.1);
+}
+
+.btn-card.selected {
+    transform: scale(1.05);
+  background-color: rgb(255, 131, 16);
+  color: rgb(255, 255, 255);
+}
+
 
 #continue-btn {
   margin-top: 2rem;
@@ -49,4 +88,7 @@
   background-color: #555;
 }
 
-
+.section-content{
+    display: flex;
+    justify-content: center;
+}
