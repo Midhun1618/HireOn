@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './Onboard.css';
+import freelancer from './components/icon_freelancer.png'
+import seller from './components/icon_seller.png'
 
 const categories = {
     'Graphic Designer': {
@@ -63,10 +65,10 @@ const Onboard = () => {
                         e.preventDefault();
                         setUserType('freelancer');
                         scrollToSection(categoryRef);
-                    }}>Freelancer</div>
+                    }}><img src={freelancer} className='card-icon'/>Freelancer</div>
 
 
-                    <div className="btn-card" onClick={() => alert('Redirect to Dashboard')}>Seller</div>
+                    <div className="btn-card" onClick={() => alert('Redirect to Dashboard')}><img src={seller} className='card-icon'/>Seller</div>
                 </div>
             </div>
 

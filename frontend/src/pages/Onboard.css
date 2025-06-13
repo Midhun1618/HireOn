@@ -58,6 +58,10 @@
   transition: 0.3s ease;
   border-radius: 8px;
   box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
+  align-content: space-around;
+  justify-content: center;
+  justify-items: center;
+  display: inline-grid;
 }
 
 .btn-card:hover {
@@ -91,4 +95,8 @@
 .section-content{
     display: flex;
     justify-content: center;
+}
+.card-icon{
+    width: 2.5rem;
+    height: 2.5rem;
 }
