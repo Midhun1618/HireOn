@@ -8,15 +8,17 @@
 }
 
 .section {
+  flex-wrap: wrap;
+  justify-content: center;
     align-content: center;
   margin-top: 3rem;
   padding-top: 5rem;
   min-height: 25rem;
   align-items: center;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   background-color: #a3a3a3;
   border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .section-main {
   margin-top: 3rem;
@@ -28,6 +30,7 @@
 }
 
 .btn {
+  width: 8rem;
     text-align: center;
   margin: 0.5rem;
   padding: 0.75rem 1.25rem;
@@ -99,4 +102,33 @@
 .card-icon{
     width: 2.5rem;
     height: 2.5rem;
+}
+
+.section-head{
+  margin-top: 10rem;
+  text-align: center;
+  font-weight: 800;
+  padding: 0.7rem;
+  display: ruby-text;
+  width: 20rem;
+  color: aliceblue;
+  background-color: #fd861e;
+  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+.section-head-main{
+  margin-top: 0;
+  text-align: center;
+  font-weight: 800;
+  padding: 0.7rem;
+  display: ruby-text;
+  width: 20rem;
+  color: aliceblue;
+  background-color: #fd861e;
+  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.container{
+  display: block;
 }

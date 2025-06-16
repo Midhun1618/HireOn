@@ -58,56 +58,72 @@ const Onboard = () => {
 
     return (
         <div className="onboard-container">
-            <h2>Join as</h2>
+            <div className='section-head-main'>Join as</div>
             <div className='section-main'>
                 <div className='section-content'>
                     <div href="#category-section" className="btn-card" onClick={(e) => {
                         e.preventDefault();
                         setUserType('freelancer');
                         scrollToSection(categoryRef);
-                    }}><img src={freelancer} className='card-icon'/>Freelancer</div>
+                    }}><img src={freelancer} className='card-icon' />Freelancer</div>
 
 
-                    <div className="btn-card" onClick={() => alert('Redirect to Dashboard')}><img src={seller} className='card-icon'/>Seller</div>
+                    <div className="btn-card" onClick={() => alert('Redirect to Dashboard')}><img src={seller} className='card-icon' />Seller</div>
                 </div>
             </div>
 
             {userType === 'freelancer' && (
                 <>
-                <h2>Select a Category</h2>
+                    <div className='section-head'>Select a Category</div>
                     <div className="section" ref={categoryRef} id="category-section">
-                        
-  
-                            {Object.keys(categories).map((cat) => (
-                                <div href="#role-section" key={cat} className="btn" onClick={(e) => {
+
+
+                        {Object.keys(categories).map((cat) => (
+                            <div
+                                href="#role-section"
+                                key={cat}
+                                className={`btn ${category === cat ? 'selected' : ''}`}
+                                onClick={(e) => {
                                     setCategory(cat);
                                     setRole('');
                                     e.preventDefault();
                                     setServices([]);
                                     scrollToSection(roleRef);
-                                }}>{cat}</div>
-                            ))}
+                                }}
+                            >
+                                {cat}
+                            </div>
+                        ))}
 
                     </div>
 
                     {category && (
-                        <div className="section" ref={roleRef} id="role-section">
-                            <h3>Choose a Role</h3>
+                        <div className="container" ref={roleRef} id="role-section">
+                            <div className='section-head'>Choose a Role</div>
+                            <div className='section'>
                                 {Object.keys(categories[category]).map((r) => (
-                                    <div href="#service-section" key={r} className="btn" onClick={(e) => {
-                                        setRole(r);
-                                        e.preventDefault();
-                                        setServices([]);
-                                        scrollToSection(serviceRef);
-                                    }}>{r}</div>
+                                    <div
+                                        href="#service-section"
+                                        key={r}
+                                        className={`btn ${role === r ? 'selected' : ''}`}
+                                        onClick={(e) => {
+                                            setRole(r);
+                                            e.preventDefault();
+                                            setServices([]);
+                                            scrollToSection(serviceRef);
+                                        }}
+                                    >
+                                        {r}
+                                    </div>
                                 ))}
+                            </div>
                         </div>
                     )}
 
                     {role && (
-                        <div className="section" ref={serviceRef} id="service-section">
-                            <h3>Select Services</h3>
-                            <div>
+                        <div className="container" ref={serviceRef} id="service-section">
+                            <div className='section-head'>Select Services</div>
+                            <div className='section'>
                                 {categories[category][role].map((service) => (
                                     <div
                                         key={service}
