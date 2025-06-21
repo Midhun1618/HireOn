@@ -18,39 +18,40 @@ const Signup = () => {
     setError("");
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
-      setError("Please fill all fields");
-      return;
-    }
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+    setError("Please fill all fields");
+    return;
+  }
+  if (formData.password !== formData.confirmPassword) {
+    setError("Passwords do not match");
+    return;
+  }
 
-    try {
-      const response = await fetch("http://localhost:5000/api/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
+  try {
+    const response = await fetch("http://localhost:5000/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      }),
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (response.ok) {
-        navigate("/dashboard");
-      } else {
-        setError(data.msg || "Signup failed");
-      }
-    } catch {
-      setError("Something went wrong");
+    if (response.ok) {
+      localStorage.setItem("token", data.token); // Store the token
+      navigate("/onboard"); // Redirect to Onboard page
+    } else {
+      setError(data.msg || "Signup failed");
     }
-  };
+  } catch {
+    setError("Something went wrong");
+  }
+};
 
   return (
     <div className="signup-container">

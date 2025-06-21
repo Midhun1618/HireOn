@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -13,13 +13,20 @@ const Dashboard = () => {
   let userName = "UserName";
   let userEmail = "username@gmail.com";
   let firstLetter = null;
+  let userType = "Freelancer";
+  let role = "Role";
+  let services = [];
 
   if (token) {
     try {
       const decoded = jwtDecode(token);
+      console.log("Decoded token:", decoded);
       userName = decoded.name || userName;
       userEmail = decoded.email || userEmail;
       firstLetter = userName.charAt(0).toUpperCase();
+      userType = decoded.userType || userType;
+      role = decoded.role || role;
+      services = decoded.services || [];
     } catch (e) {
       console.error("Failed to decode token", e);
     }
@@ -72,7 +79,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Avatar with logout popover */}
         <div style={{ position: "relative" }}>
           <div
             className="icon-avatar"
@@ -160,21 +166,15 @@ const Dashboard = () => {
           <div className="sidebar-user">
             <p className="username">{userName}</p>
             <p className="email">{userEmail}</p>
-            <div className="btn-blue">Freelancer</div>
-            <div className="btn-orange">Web Designer</div>
-          </div>
-
-          <div className="skills-box">
-            <div className="skills-row">
-              <span className="skill-tag">Web Designer</span>
-              <span className="skill-tag">Web Designer</span>
-            </div>
-            <div className="skills-row">
-              <span className="skill-tag">Web Designer</span>
-              <span className="skill-tag">Web Designer</span>
-            </div>
-            <div>
-              <span className="skill-tag">Web Designer</span>
+            <div className="btn-blue">{userType}</div>
+            <div className="btn-orange">{role}</div>
+            <div className="skills-box">
+              {services.length > 0 &&
+                services.map((skill, idx) => (
+                  <span key={idx} className="skill-tag">
+                    {skill}
+                  </span>
+                ))}
             </div>
           </div>
 
