@@ -1,10 +1,12 @@
 
-import Home from './pages/Onboard'
+import Home from './pages/Home'
 
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
 import Dashboard from './pages/Dashboard';
+
+import Onboard from './pages/Onboard';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 function App() {
@@ -15,6 +17,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard/>} />
                     <Route path="/signup" element={<Signup/>} />
               <Route path="/login" element={<Login/>} />
+               <Route path="/onboard" element={<Onboard/>} />
       </Routes>
 
   );

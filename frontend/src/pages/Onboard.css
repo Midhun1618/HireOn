@@ -1,134 +1,269 @@
-.onboard-container {
-  min-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  font-family: sans-serif;
-  text-align: center;
-  scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.section {
-  flex-wrap: wrap;
-  justify-content: center;
-    align-content: center;
-  margin-top: 3rem;
-  padding-top: 5rem;
-  min-height: 25rem;
-  align-items: center;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: white;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center cards on step 0 */
+.center-grid {
   display: flex;
-  background-color: #a3a3a3;
-  border-radius: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.section-main {
-  margin-top: 3rem;
-  padding-top: 5rem;
-  min-height: 25rem;
-  align-items: center;
-  background-color: #a3a3a3;
-  border-radius: 1.5rem;
-}
-
-.btn {
-  width: 8rem;
-    text-align: center;
-  margin: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
-  background: white;
-  cursor: pointer;
-  min-width: 3rem;
-  min-height: 6rem;
-  transition: 0.3s;
-  border-radius: 8px;
-}
-
-.btn:hover {
-  background: #ff9f4a;
-}
-
-.btn.selected {
-  background-color: rgb(255, 131, 16);
-  color: rgb(255, 255, 255);
-}
-.btn-card {
-  margin: 1.5rem;
-  min-height: 8rem;
-  min-width: 5.5rem;
-  padding: 1.75rem 1.25rem;
-  background: white;
-  cursor: pointer;
-  transition: 0.3s ease;
-  border-radius: 8px;
-  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
-  align-content: space-around;
   justify-content: center;
-  justify-items: center;
-  display: inline-grid;
+  gap: 20px;
 }
 
-.btn-card:hover {
-  background: #ff9f4a;
+/* Flex center layout for few items (≤4) */
+.flex-center-grid {
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Interests Grid (default grid layout) */
+/* .interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+  flex-grow: 1;
+  align-items: start;
+} */
+
+/* Default grid gap for interests */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 17px; /* this controls both row and column gap */
+}
+
+/* Smaller vertical gap only for step 1 */
+.interests-grid.step-1 {
+  row-gap: 28px; /* smaller vertical spacing */
+  column-gap: 16px; /* keep horizontal gap same */
+}
+
+
+/* Interest card */
+/* Note: width and height removed here, controlled inline in React */
+.interest-card {
+  padding: 25px 20px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  border: none;
+}
+
+/* Animation states */
+.interest-card.animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.interest-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+.interest-card:hover {
   transform: translateY(-5px);
-  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
 }
 
-.btn-card.selected {
-    transform: scale(1.05);
-  background-color: rgb(255, 131, 16);
-  color: rgb(255, 255, 255);
+/* Selected card style */
+.interest-card.selected {
+  background: rgb(255, 131, 16);
+  color: white;
+  box-shadow: 0 8px 25px rgba(255, 131, 16, 0.4);
+  border: none;
+  transform: translateY(-5px);
+}
+
+/* Remove blue outline on focus or active */
+.interest-card.selected:focus,
+.interest-card.selected:active,
+.interest-card.selected:hover {
+  border: none;
+  outline: none;
+}
+
+/* Interest icon */
+.interest-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Interest name */
+.interest-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.interest-card.selected .interest-name {
+  color: white;
+}
+
+/* Container and layout */
+.container {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+}
+
+.center-image {
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+.image-section {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  background-color: #ff8310;
+}
+
+.image-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%23ffffff' fill-opacity='1' d='M0,192L80,213.3C160,235,320,277,480,261.3C640,245,800,171,960,133.3C1120,96,1280,96,1360,96L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'></path></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(90deg) scaleX(-1);
+  transform-origin: left top;
+}
+
+/* Content section with fade animation */
+.content-section {
+  width: 70%;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.4s ease;
+}
+
+.content-section.fade-out {
+  opacity: 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  padding: 0 1rem;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6600, #fca311);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.4rem;
+  letter-spacing: 1.2px;
+
+}
+
+.title p {
+  font-size: 1.2rem;
+  color: #666666;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.6px;
 }
 
 
-#continue-btn {
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
-  font-weight: bold;
-  background-color: #333;
+/* Next button */
+.next-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgb(255, 131, 16);
   color: white;
   border: none;
-  border-radius: 10px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 131, 16, 0.4);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
 }
 
-#continue-btn:hover {
-  background-color: #555;
+.next-button.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }
 
-.section-content{
-    display: flex;
-    justify-content: center;
-}
-.card-icon{
-    width: 2.5rem;
-    height: 2.5rem;
+.next-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 131, 16, 0.6);
 }
 
-.section-head{
-  margin-top: 10rem;
-  text-align: center;
-  font-weight: 800;
-  padding: 0.7rem;
-  display: ruby-text;
-  width: 20rem;
-  color: aliceblue;
-  background-color: #fd861e;
-  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-}
-.section-head-main{
-  margin-top: 0;
-  text-align: center;
-  font-weight: 800;
-  padding: 0.7rem;
-  display: ruby-text;
-  width: 20rem;
-  color: aliceblue;
-  background-color: #fd861e;
-  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
+.next-button:active {
+  transform: translateY(-1px);
 }
 
-.container{
-  display: block;
+.next-button:disabled {
+  background-color: #c5c5c5;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-section,
+  .content-section {
+    width: 100%;
+  }
+
+  .image-section {
+    height: 200px;
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
 }
