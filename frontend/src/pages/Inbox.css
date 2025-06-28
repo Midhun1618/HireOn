@@ -1,4 +1,4 @@
-/* Container */
+
 .inbox-container {
   display: flex;
   padding: 16px;
@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-/* Sidebar */
 .inbox-sidebar {
   background-color: #d3d3d3;
   border-radius: 16px;

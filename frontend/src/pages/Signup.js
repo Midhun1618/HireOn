@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
@@ -9,64 +8,34 @@ const Signup = () => {
     password: "",
     confirmPassword: ""
   });
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setError("");
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
-    setError("Please fill all fields");
-    return;
-  }
-  if (formData.password !== formData.confirmPassword) {
-    setError("Passwords do not match");
-    return;
-  }
-
-  try {
-    const response = await fetch("http://localhost:5000/api/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      localStorage.setItem("token", data.token); // Store the token
-      navigate("/onboard"); // Redirect to Onboard page
-    } else {
-      setError(data.msg || "Signup failed");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
     }
-  } catch {
-    setError("Something went wrong");
-  }
-};
+    console.log("Form submitted", formData);
+  };
 
   return (
     <div className="signup-container">
       <span>Sign Up to </span>
-      <div className="home-logo">
-        <span className="orange-text">H</span>
-        <span className="gray-texst">ire</span>
-        <span className="orange-text">On</span>
-      </div>
-      {error && <div className="error-text">{error}</div>}
+       <div className="home-logo">
+          <span className="orange-text">H</span>
+          <span className="gray-texst">ire</span>
+          <span className="orange-text">On</span>
+        </div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
-          placeholder="Full Name"
+          placeholder="User Name"
           value={formData.name}
           onChange={handleChange}
           required

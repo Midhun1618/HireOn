@@ -62,3 +62,9 @@ h2 {
 .gray-text {
   color: #4b5563; 
 }
+.error-text{
+  text-align: center;
+  color: crimson;
+  font-size: medium;
+  padding-bottom: 0.5rem;
+}

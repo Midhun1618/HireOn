@@ -4,7 +4,6 @@ import img_banner from './components/detailsBanner.png'
 
 const JobDetail = () => {
   return (
-    
     <div className="jobdetails-body">
       <header className="dashboard-header">
         <div className="home-logo">
