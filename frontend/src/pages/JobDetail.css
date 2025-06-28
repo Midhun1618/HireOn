@@ -10,10 +10,11 @@
   gap: 24px;
   max-width: 80rem;
   margin: 0 auto;
-  background-color: #d3d3d3;
+  background-color: #f6f6f6;
   border-radius: 24px;
   padding: 24px;
   margin-top: 1.5rem;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -97,7 +98,7 @@
 }
 
 .taskdetails {
-  background-color: #ffffff;
+  background-color: #dbdbdb;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
