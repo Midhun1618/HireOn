@@ -1,6 +1,6 @@
 import React from "react";
 import "./JobDetail.css";
-import img_banner from './components/detailsBanner.png'
+import img_banner from './assets/detailsBanner.png'
 
 const JobDetail = () => {
   return (

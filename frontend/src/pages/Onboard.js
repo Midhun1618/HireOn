@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import img from './components/img.png'
+import img from './assets/img.png'
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import "./Onboard.css";

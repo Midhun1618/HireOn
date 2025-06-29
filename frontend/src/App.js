@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Onboard from './pages/Onboard';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import DashboardLayout from './component/DashboardLayout';
+import DashboardLayout from './components/DashboardLayout';
 import DashboardHome from './pages/DashboardHome';
 import JobList from './pages/JobList';
 import JobDetails from './pages/JobDetail';
@@ -15,6 +15,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/onboard" element={<Onboard />} />
 
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<DashboardHome />} />
