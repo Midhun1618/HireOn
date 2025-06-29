@@ -1,6 +1,6 @@
 import React from "react";
 import { jwtDecode } from "jwt-decode";
-import './sidebar.css';
+import "./sidebar.css";
 
 const Sidebar = () => {
   const token = localStorage.getItem("token");
@@ -29,18 +29,40 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-dot" />
-      <div className="sidebar-avatar">{firstLetter}</div>
+      <div
+        className="sidebar-avatar"
+        style={{
+          backgroundColor: "#ff6600",
+          color: "white",
+          fontWeight: "bold",
+          fontSize: "24px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "50%",
+          width: "60px",
+          height: "60px",
+          userSelect: "none",
+          margin: "0 auto 1rem auto"
+        }}
+      >
+        {firstLetter || "U"}
+      </div>
       <div className="sidebar-user">
         <p className="username">{userName}</p>
         <p className="email">{userEmail}</p>
         <div className="btn-blue">{userType}</div>
         <div className="btn-orange">{role}</div>
         <div className="skills-box">
-          {services.map((skill, idx) => (
-            <span key={idx} className="skill-tag">{skill}</span>
-          ))}
+          {services.length > 0 &&
+            services.map((skill, idx) => (
+              <span key={idx} className="skill-tag">
+                {skill}
+              </span>
+            ))}
         </div>
       </div>
+
       <div className="task-summary">
         <div className="task-row">
           <span>Task Completed</span>

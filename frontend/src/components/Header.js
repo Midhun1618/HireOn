@@ -3,14 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import './Header.css';
 
-
 const Header = () => {
   const navigate = useNavigate();
   const [showPopover, setShowPopover] = useState(false);
   const popoverRef = useRef(null);
 
   const token = localStorage.getItem("token");
-
   let userName = "UserName";
   let firstLetter = "U";
 
@@ -30,9 +28,7 @@ const Header = () => {
     navigate("/");
   };
 
-  const handleAvatarClick = () => {
-    setShowPopover((prev) => !prev);
-  };
+  const handleAvatarClick = () => setShowPopover((prev) => !prev);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -42,7 +38,7 @@ const Header = () => {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showPopover]);
+  }, []);
 
   return (
     <header className="dashboard-header">
@@ -60,10 +56,7 @@ const Header = () => {
         </div>
       </div>
       <div style={{ position: "relative" }}>
-        <div
-          className="icon-avatar"
-          onClick={handleAvatarClick}
-        >
+        <div className="icon-avatar" onClick={handleAvatarClick}>
           {firstLetter}
         </div>
         {showPopover && (
