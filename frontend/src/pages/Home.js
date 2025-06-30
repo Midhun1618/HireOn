@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import img from './components/img_landingpage.png';
+import img from './assets/img_landingpage.png';
 import { jwtDecode } from 'jwt-decode';
 
 function Home() {

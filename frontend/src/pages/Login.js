@@ -38,7 +38,19 @@ const Login = () => {
 
       if (response.ok) {
         localStorage.setItem("token", data.token);
-        navigate("/dashboard");
+
+        const user = data.user;
+        const isOnboarded =
+          user.userType &&
+          user.role &&
+          Array.isArray(user.services) &&
+          user.services.length > 0;
+
+        if (isOnboarded) {
+          navigate("/dashboard");
+        } else {
+          navigate("/onboard");
+        }
       } else {
         setError(data.msg || "No account found or invalid password");
       }
@@ -46,6 +58,7 @@ const Login = () => {
       setError("Something went wrong");
     }
   };
+
 
   return (
     <div className="login-container">
@@ -67,8 +80,8 @@ const Login = () => {
         />
         <input
           type="password"
-          name="password" 
-          
+          name="password"
+
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
