@@ -183,7 +183,7 @@ background: linear-gradient(#FF6F3C,#ff8558);
 }
 
 .task-row {
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
