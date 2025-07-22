@@ -4,26 +4,6 @@ import "./Inbox.css";
 const Inbox = () => {
     return (
         <div className="jobdetails-body">
-            <header className="dashboard-header">
-                <div className="home-logo">
-                    <span className="orange-text">H</span>
-                    <span className="gray-texst">ire</span>
-                    <span className="orange-text">On</span>
-                </div>
-                <div className="masked-header">
-                    <input
-                        type="text"
-                        placeholder="Search for Jobs"
-                        className="search-bar"
-                    />
-                    <div className="header-icons">
-                        <div className="icon-circle" />
-                        <div className="icon-circle" />
-                        <div className="icon-circle" />
-                    </div>
-                </div>
-                <div className="icon-avatar" />
-            </header>
             <div className="inbox-container">
                 <div className="inbox-sidebar">
                     <h2 className="inbox-title">Inbox</h2>

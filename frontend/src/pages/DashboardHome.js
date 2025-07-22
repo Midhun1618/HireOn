@@ -3,7 +3,6 @@ const DashboardHome = () => {
     <>
       <div className="content-box">
         <p className="content-title">Active Tasks</p>
-        {/* Add dynamic content here */}
       </div>
     </>
   );
