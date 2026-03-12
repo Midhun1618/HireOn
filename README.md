@@ -26,7 +26,5 @@
 - MongoDB
 - JWT for Authentication
 
----
-
-## 📁 Folder Structure
+Collaborated project
 
